@@ -155,7 +155,7 @@ class Config:
     def _load(self, filepath: Union[Path, str, None]) -> None:
         if filepath is None:
             xdg_config_home = os.getenv("XDG_CONFIG_HOME", "~/.config")
-            filepath = Path(xdg_config_home) / "sway-interactive-screenshot/config.toml"
+            filepath = Path(xdg_config_home).expanduser() / "sway-interactive-screenshot/config.toml"
 
         filepath = Path(filepath)
 
